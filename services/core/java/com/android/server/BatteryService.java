@@ -667,6 +667,11 @@ public final class BatteryService extends SystemService {
         intent.putExtra(BatteryManager.EXTRA_CHARGE_COUNTER, mBatteryProps.batteryChargeCounter);
         intent.putExtra(BatteryManager.EXTRA_DASH_CHARGER, mDashCharger);
         intent.putExtra(BatteryManager.EXTRA_TURBO_POWER, mTurboPower);
+        
+        intent.putExtra(BatteryManager.EXTRA_MOD_LEVEL, mBatteryProps.modLevel);
+        intent.putExtra(BatteryManager.EXTRA_MOD_STATUS, mBatteryProps.modStatus);
+        intent.putExtra(BatteryManager.EXTRA_MOD_TYPE, mBatteryProps.modType);
+        intent.putExtra(BatteryManager.EXTRA_MOD_FLAG, mBatteryProps.modFlag);
 
         if (DEBUG) {
             Slog.d(TAG, "Sending ACTION_BATTERY_CHANGED.  level:" + mBatteryProps.batteryLevel +
@@ -684,6 +689,10 @@ public final class BatteryService extends SystemService {
                     ", maxChargingVoltage:" + mBatteryProps.maxChargingVoltage +
                     ", chargeCounter:" + mBatteryProps.batteryChargeCounter +
                     ", dashCharger:" + mDashCharger +
+                    ", mod_flag:" + mBatteryProps.modFlag +
+                    ", mod_type:" + mBatteryProps.modType +
+                    ", mod_level:" + mBatteryProps.modLevel +
+                    ", mod_status:" + mBatteryProps.modStatus +
                     ", turboPower:" + mTurboPower);
         }
 
