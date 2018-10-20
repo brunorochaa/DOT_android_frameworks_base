@@ -33,6 +33,10 @@ public class BatteryProperties implements Parcelable {
     public int batteryFullCharge;
     public int batteryChargeCounter;
     public String batteryTechnology;
+    public int modLevel;
+    public int modStatus;
+    public int modType;
+    public int modFlag;
 
     public BatteryProperties() {
     }
